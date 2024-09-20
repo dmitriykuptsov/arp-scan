@@ -69,7 +69,7 @@ ether_socket.bind((args.interface, 0))
 
 sourcemac = args.sourcemac.split(":")
 for i in range(0, len(sourcemac)):
-    sourcemac[i] = int.from_bytes(unhexlify(sourcemac[i]))
+    sourcemac[i] = int.from_bytes(unhexlify(sourcemac[i]), byteorder="big")
 source = args.source.split(".")
 for i in range(0, len(source)):
     source[i] = int(source[i])
