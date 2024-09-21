@@ -53,6 +53,7 @@ parser.add_argument("--timeout", dest="timeout", required=False, default=2, help
 
 args = parser.parse_args()
 
+args.timeout = int(args.timeout)
 network, mask = Misc.split_ip(args.destination)
 oc1, oc2, oc3, oc4 = network.split(".")
 network = [int(oc1), int(oc2), int(oc3), int(oc4)]
