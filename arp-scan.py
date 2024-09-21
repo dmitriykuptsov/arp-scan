@@ -55,6 +55,9 @@ args = parser.parse_args()
 
 args.timeout = int(args.timeout)
 network, mask = Misc.split_ip(args.destination)
+if int(mask) >32 or int(mask) < 0:
+    print("Invalid mask was provided")
+    exit(-1)
 oc1, oc2, oc3, oc4 = network.split(".")
 network = [int(oc1), int(oc2), int(oc3), int(oc4)]
 mask = int(mask)
