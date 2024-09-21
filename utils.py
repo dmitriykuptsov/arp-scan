@@ -23,12 +23,12 @@ class Misc():
     
     @staticmethod
     def mac_to_string(mac):
-        return hex(mac[0]) + ":" + \
-                hex(mac[1]) + ":" + \
-                hex(mac[2]) + ":" + \
-                hex(mac[3]) + ":" + \
-                hex(mac[4]) + ":" + \
-                hex(mac[5])
+        return hex(mac[0]).replace("0x", "") + ":" + \
+                hex(mac[1]).replace("0x", "") + ":" + \
+                hex(mac[2]).replace("0x", "") + ":" + \
+                hex(mac[3]).replace("0x", "") + ":" + \
+                hex(mac[4]).replace("0x", "") + ":" + \
+                hex(mac[5]).replace("0x", "")
     @staticmethod
     def validate_ip_mask(network, network_bits):
         if network[0] == 10:
